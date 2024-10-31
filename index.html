@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
 
 </head>
-<body>
+
+<body id="background">
 
     <!-- humidity filter div -->
     <div id="humidity-filter"></div>
 
     <!-- leaf animation -->
-    <img class="leaf" src="assets/leaf.png"/>
-    
+    <img class="leaf" src="assets/leaf.png" />
+
     <!-- main div taking up full page -->
     <div id="main-div" class="container">
 
@@ -25,18 +27,27 @@
             <div id="temp-div">
                 <input id="temp-slider" type="range" min="-10" max="45">
             </div>
-            <p id="temperature">  </p>
+            <p id="temperature"> </p>
         </div>
 
         <!-- wind and humidity on right -->
         <div id="right-panel" class="container flex-column">
             <!-- wind slider -->
-            <div class="container flex-column">
-                <p>Wind</p>
-                <div>
-                    <input class="horizontal-slider" id="wind-slider" type="range" min="0" max="32">
+            <div class="container">
+                <div class="container flex-column">
+                    <p>Wind</p>
+                    <div>
+                        <input class="horizontal-slider" id="wind-slider" type="range" min="0" max="32">
+                    </div>
+                    <p id="wind-speed"> </p>
                 </div>
-                <p id="wind-speed">  </p>
+                <div class="container flex-column">
+                    <p>wind direction</p>
+                    <div>
+                        <input type="range" class="c-rng" min="0" max="360" step="1" data-range="circular" />
+                    </div>
+                    <p id="wind-direction"> </p>
+                </div>
             </div>
             <!-- humidity slider -->
             <div class="container flex-column">
@@ -44,10 +55,11 @@
                 <div>
                     <input class="horizontal-slider" id="humidity-slider" type="range" min="0" max="100">
                 </div>
-                <p id="humidity">  </p>
+                <p id="humidity"> </p>
             </div>
 
         </div>
     </div>
 </body>
+
 </html>
