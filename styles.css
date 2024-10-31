@@ -18,11 +18,30 @@ body {
 #temp-slider {
     transform: rotate(-90deg);
     translate: 0 50px;
+    border-radius: 5px;
     /* adds gradient */
     -webkit-appearance: none;
     appearance: none;
     background: linear-gradient(-90deg, rgb(237, 148, 163), rgb(243, 231, 179));
 }
+
+#temp-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    border-radius: 50%; 
+    background: #7511bd; /* Green background */
+    cursor: pointer;
+}
+
+#temp-slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    border-radius: 50%; 
+    background: #7511bd; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
 
 /* HORIZONTAL SLIDER STYLING */
 .horizontal-slider {
