@@ -13,6 +13,16 @@ body {
 }
 
 
+
+/* makes temperature slider verticle*/
+#temp-slider {
+    writing-mode: vertical-lr;
+    direction: rtl;
+    vertical-align: middle;
+}
+
+
+
 /* HORIZONTAL SLIDER STYLING */
 .horizontal-slider {
     -webkit-appearance: none;
