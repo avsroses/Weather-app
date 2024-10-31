@@ -45,7 +45,7 @@ function updateHumidity(humidityValue) {
 // updates wind speed value on slider
 function updateWindSpeed(windSpeedValue) {
     windSlider.value = windSpeedValue;
-    windSpeed.innerHTML = windSpeedValue + "m/s";
+    windSpeed.innerHTML = windSpeedValue + " m/s";
 }
 
 // updates temperature value on slider
