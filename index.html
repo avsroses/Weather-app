@@ -9,16 +9,36 @@
 
 </head>
 <body>
+    <!-- main div taking up full page -->
     <div id="main-div" class="container">
-
-    <div class="container flex-column">
-        <p>Wind</p>
-        <div>
-            <input id="wind-slider" type="range" value="0">
+        <!-- temperature slider on left -->
+        <div id="left-panel">
+            <p>Temperature</p>
+            <div>
+                <input class="vertical-slider" id="temp-slider" type="range" value="0">
+            </div>
+            <p id="temperature"></p>
         </div>
-        <p id="wind-speed"></p>
-    </div>
-    
+        <!-- wind and humidity on right -->
+        <div id="right-panel" class="container flex-column">
+            <!-- wind slider -->
+            <div class="container flex-column">
+                <p>Wind</p>
+                <div>
+                    <input class="horizontal-slider" id="wind-slider" type="range" value="0">
+                </div>
+                <p id="wind-speed"></p>
+            </div>
+            <!-- humidity slider -->
+            <div class="container flex-column">
+                <p>Humidity</p>
+                <div>
+                    <input class="horizontal-slider" id="humidity-slider" type="range" value="0">
+                </div>
+                <p id="humidity"></p>
+            </div>
+
+        </div>
     </div>
 </body>
 </html>

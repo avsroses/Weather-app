@@ -12,7 +12,9 @@ body {
     flex-direction: column;
 }
 
-#wind-slider {
+
+/* HORIZONTAL SLIDER STYLING */
+.horizontal-slider {
     -webkit-appearance: none;
     width: 100%;
     height: 10px;
@@ -24,24 +26,39 @@ body {
     transition: opacity .2s;
 }
 
-#wind-slider::-webkit-slider-thumb {
+.horizontal-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 23px;
     height: 24px;
     background-size: 25px;
-    background: url('assets/windSpeed.webp');
     cursor: pointer;
 }
 
-#wind-slider::-moz-range-thumb {
+.horizontal-slider::-moz-range-thumb {
     width: 23px;
     height: 25px;
-    background: url('assets/windSpeed.webp');
     background-size: 25px;
     cursor: pointer;
 }
 
-#wind-slider:hover {
+.horizonatl-slider:hover {
     opacity: 1;
-  }
+}
+
+
+/* WIND SPEED IMAGE SLIDER */
+#wind-slider::-webkit-slider-thumb {
+    background-image: url('assets/windSpeed.jpg');
+}
+#wind-slider::-moz-range-thumb {
+    background-image: url('assets/windSpeed.jpg');
+}
+
+/* HUMIDITY IMAGE SLIDER */
+#humidity-slider::-webkit-slider-thumb {
+    background-image: url('assets/humidity.png');;
+}
+#humidity-slider::-moz-range-thumb {
+    background-image: url('assets/humidity.png');;
+}
