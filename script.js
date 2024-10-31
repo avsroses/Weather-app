@@ -13,6 +13,9 @@ const temperatureNum = document.getElementById("temperature");
 // animations
 const leafAnimations = document.getElementsByClassName("leaf");
 
+// filter
+const humidityFilter = document.getElementById("humidity-filter")
+
 /**
  * 
  */
@@ -43,6 +46,8 @@ async function fetchData() {
 function updateHumidity(humidityValue) {
     humiditySlider.value = humidityValue;
     humidityNum.innerHTML = humidityValue + "%"
+
+    humidityFilter.style.opacity = humidityValue * 0.5 / 100;
 }
 
 // updates wind speed value on slider
