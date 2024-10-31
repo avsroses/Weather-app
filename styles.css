@@ -50,6 +50,7 @@ body {
     position: absolute;
     z-index: 2;
     width: 100px;
+    animation: leafmovement 12s linear infinite;
 }
 
 
@@ -106,20 +107,20 @@ body {
 }
 
 
-@keyframe leafmovement {
+@keyframes leafmovement {
     0% {
-        transform: translate(0, 0) rotate(0);
+        transform: translate(-100px, 0) rotate(0);
     }
     20% {
-        transform: translate(15vw, -10vh) rotate(85deg);
+        transform: translate(15vw, 10vh) rotate(85deg);
     }
     65% {
-        transform: translate(55vw, -12vh) rotate(550deg);
+        transform: translate(55vw, 12vh) rotate(550deg);
     }
     80% {
-        transform: translate(70vw, -17vh) rotate(740deg);
+        transform: translate(70vw, 17vh) rotate(740deg);
     }
     100% {
-        transform: translate(100vw, -25vh) rotate(920deg);
+        transform: translate(100vw, 25vh) rotate(920deg);
     }
 }

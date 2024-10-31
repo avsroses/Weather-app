@@ -10,6 +10,9 @@ const humidityNum = document.getElementById("humidity");
 const temperatureSlider = document.getElementById("temp-slider");
 const temperatureNum = document.getElementById("temperature");
 
+// animations
+const leafAnimations = document.getElementsByClassName("leaf");
+
 /**
  * 
  */
@@ -46,6 +49,12 @@ function updateHumidity(humidityValue) {
 function updateWindSpeed(windSpeedValue) {
     windSlider.value = windSpeedValue;
     windSpeed.innerHTML = windSpeedValue + " m/s";
+
+    const newDuration = (32 - Number(windSpeedValue)) * 11 / 32 + 1;
+
+    for(const leaf of leafAnimations) {
+        leaf.style.animationDuration = newDuration + "s";
+    }
 }
 
 // updates temperature value on slider
