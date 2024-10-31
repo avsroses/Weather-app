@@ -16,12 +16,13 @@ body {
 
 /* makes temperature slider verticle*/
 #temp-slider {
-    writing-mode: vertical-lr;
-    direction: rtl;
-    vertical-align: middle;
+    transform: rotate(-90deg);
+    translate: 0 50px;
+    /* adds gradient */
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(-90deg, rgb(237, 148, 163), rgb(243, 231, 179));
 }
-
-
 
 /* HORIZONTAL SLIDER STYLING */
 .horizontal-slider {
@@ -71,4 +72,10 @@ body {
 }
 #humidity-slider::-moz-range-thumb {
     background-image: url('assets/humidity.png');;
+}
+
+
+/* set div of temp so no overflow */
+#temp-div {
+    height: 120px;
 }

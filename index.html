@@ -11,14 +11,16 @@
 <body>
     <!-- main div taking up full page -->
     <div id="main-div" class="container">
+
         <!-- temperature slider on left -->
-        <div id="left-panel">
+        <div id="left-panel" class="container flex-column">
             <p>Temperature</p>
-            <div>
+            <div id="temp-div">
                 <input id="temp-slider" type="range" value="0">
             </div>
-            <p id="temperature"></p>
+            <p id="temperature"> 30ºC </p>
         </div>
+
         <!-- wind and humidity on right -->
         <div id="right-panel" class="container flex-column">
             <!-- wind slider -->
@@ -27,7 +29,7 @@
                 <div>
                     <input class="horizontal-slider" id="wind-slider" type="range" value="0">
                 </div>
-                <p id="wind-speed"></p>
+                <p id="wind-speed"> m/s </p>
             </div>
             <!-- humidity slider -->
             <div class="container flex-column">
@@ -35,7 +37,7 @@
                 <div>
                     <input class="horizontal-slider" id="humidity-slider" type="range" value="0">
                 </div>
-                <p id="humidity"></p>
+                <p id="humidity"> % </p>
             </div>
 
         </div>
