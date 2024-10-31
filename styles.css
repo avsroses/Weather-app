@@ -106,7 +106,7 @@ body {
     height: 120px;
 }
 
-
+/* leaf animation */
 @keyframes leafmovement {
     0% {
         transform: translate(-100px, 0) rotate(0);

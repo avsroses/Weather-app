@@ -50,6 +50,7 @@ function updateWindSpeed(windSpeedValue) {
     windSlider.value = windSpeedValue;
     windSpeed.innerHTML = windSpeedValue + " m/s";
 
+    // calculates duration based on speed
     const newDuration = (32 - Number(windSpeedValue)) * 11 / 32 + 1;
 
     for(const leaf of leafAnimations) {
