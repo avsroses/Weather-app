@@ -28,6 +28,11 @@ h1 {
     flex-direction: column;
 }
 
+/* Allows arrow to not overlap words */
+.wind-spacing {
+    padding: 40px;
+}
+
 /* HORIZONTAL SLIDER STYLING */
 .horizontal-slider {
     -webkit-appearance: none;
@@ -111,6 +116,12 @@ h1 {
 }
 
 
+#wind-arrow {
+    position: absolute;
+    width: 150px;
+    animation: arrowmovement 1s linear 1;
+    transform: rotate(0deg);
+}
 
 /* WIND SPEED IMAGE SLIDER */
 #wind-slider::-webkit-slider-thumb {

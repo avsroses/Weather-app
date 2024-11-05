@@ -29,6 +29,9 @@ const humidityFilter = document.getElementById("humidity-filter");
 
 const dayOrNight = document.getElementById("background");
 
+const windDirection = document.getElementById("wind-direct-value");
+const windDegree = document.getElementById("wind-arrow");
+
 /**
  * 
  */
@@ -55,6 +58,9 @@ async function fetchData() {
         updateTimeOfDay(json.current.is_day);
 
         updateCloudCoverage(json.current.cloudcover);
+
+        updateWindDirection(json.current.wind_dir);
+        updateWindDegree(json.current.wind_degree)
         
     } catch(error) {
         console.error(error);
@@ -110,13 +116,20 @@ function updateCloudCoverage(cloudCover) {
         for(const cloud of cloudAnimation) {
             cloud.style.opacity = 0;
         }
-    } else if(cloudCover <= 5) {
+    } 
+    if(cloudCover <= 5) {
         for(const cloud of cloudAnimation) {
             cloud.style.opacity = 0.5;
         }
-    } else {
+    } 
+}
 
-    }
+function updateWindDirection(windDirectionValue) {
+    windDirection.innerHTML = windDirectionValue;
+}
+
+function updateWindDegree(windDegreeValue) {
+    windDegree.style.rotate = windDegreeValue + "deg";
 }
 
 // fetch data every half second
