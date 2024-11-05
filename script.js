@@ -41,7 +41,7 @@ async function fetchData() {
         //const response = await fetch(apiUrl + new URLSearchParams(urlParams));
 
         // check response is ok
-        if(!response.ok) {
+        if (!response.ok) {
             throw new Error("Response Status: ", response.status);
         }
 
@@ -61,8 +61,8 @@ async function fetchData() {
 
         updateWindDirection(json.current.wind_dir);
         updateWindDegree(json.current.wind_degree)
-        
-    } catch(error) {
+
+    } catch (error) {
         console.error(error);
     }
 }
@@ -83,11 +83,11 @@ function updateWindSpeed(windSpeedValue) {
     // calculates duration based on speed
     const newDuration = (32 - Number(windSpeedValue)) * 11 / 32 + 1;
 
-    for(const leaf of leafAnimations) {
+    for (const leaf of leafAnimations) {
         leaf.style.animationDuration = newDuration + "s";
     }
 
-    for(const cloud of cloudAnimation) {
+    for (const cloud of cloudAnimation) {
         cloud.style.animationDuration = newDuration + "s";
     }
 }
@@ -105,23 +105,23 @@ function updateUVIndex(uvIndexValue) {
 }
 
 function updateTimeOfDay(dayTime) {
-    if(dayTime === "no"){
+    if (dayTime === "no") {
         dayOrNight.style.backgroundColor = "black";
         dayOrNight.style.color = "white";
-    } 
+    }
 }
 
 function updateCloudCoverage(cloudCover) {
-    if(cloudCover === 0) {
-        for(const cloud of cloudAnimation) {
+    if (cloudCover === 0) {
+        for (const cloud of cloudAnimation) {
             cloud.style.opacity = 0;
         }
-    } 
-    if(cloudCover <= 5) {
-        for(const cloud of cloudAnimation) {
+    }
+    if (cloudCover <= 5) {
+        for (const cloud of cloudAnimation) {
             cloud.style.opacity = 0.5;
         }
-    } 
+    }
 }
 
 function updateWindDirection(windDirectionValue) {
