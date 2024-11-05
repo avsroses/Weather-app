@@ -24,11 +24,12 @@ const uvIndex = document.getElementById("uv-index");
 const leafAnimations = document.getElementsByClassName("leaf");
 const cloudAnimation = document.getElementsByClassName("cloud");
 
-// filter
+// filters
 const humidityFilter = document.getElementById("humidity-filter");
 
 const dayOrNight = document.getElementById("background");
 
+// link wind direction displays
 const windDirection = document.getElementById("wind-direct-value");
 const windDegree = document.getElementById("wind-arrow");
 
@@ -104,6 +105,7 @@ function updateUVIndex(uvIndexValue) {
     uvIndex.innerHTML = uvIndexValue;
 }
 
+// updates backgorund and font to white/ black based on if its day
 function updateTimeOfDay(dayTime) {
     if (dayTime === "no") {
         dayOrNight.style.backgroundColor = "black";
@@ -111,6 +113,7 @@ function updateTimeOfDay(dayTime) {
     }
 }
 
+// Changes opacity of cloud image based on cloud coverage
 function updateCloudCoverage(cloudCover) {
     if (cloudCover === 0) {
         for (const cloud of cloudAnimation) {
@@ -125,11 +128,15 @@ function updateCloudCoverage(cloudCover) {
 }
 
 function updateWindDirection(windDirectionValue) {
+    // Changes text to display direction of wind
     windDirection.innerHTML = windDirectionValue;
 }
 
 function updateWindDegree(windDegreeValue) {
+    // Changes rotation of arrow
     windDegree.style.rotate = windDegreeValue + "deg";
+    // Changes text below to also include degree value
+    windDirection.innerHTML = windDirection.innerHTML + " " + windDegreeValue + "°";
 }
 
 // fetch data every half second
