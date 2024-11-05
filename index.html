@@ -18,7 +18,7 @@
     <!-- leaf animation -->
     <img class="leaf" src="assets/leaf.png" />
 
-    <div id="title" class="container flex-column"> 
+    <div id="title" class="container flex-column">
         <h1> Weather App </h1>
     </div>
     <!-- main div taking up full page -->
@@ -56,6 +56,16 @@
 
         </div>
     </div>
+
+    <!-- UV Index at bottom -->
+    <div class="container flex-column">
+        <p>UV Index</p>
+        <div>
+            <input class="horizontal-slider" id="uv-slider" type="range" min="1" max="10">
+        </div>
+        <p id="uv-index"> </p>
+    </div>
+
 </body>
 
 </html>

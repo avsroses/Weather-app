@@ -17,6 +17,9 @@ const humidityNum = document.getElementById("humidity");
 const temperatureSlider = document.getElementById("temp-slider");
 const temperatureNum = document.getElementById("temperature");
 
+const uvSlider = document.getElementById("uv-slider");
+const uvIndex = document.getElementById("uv-index");
+
 // animations
 const leafAnimations = document.getElementsByClassName("leaf");
 
@@ -46,6 +49,7 @@ async function fetchData() {
         updateHumidity(json.current.humidity);
         updateWindSpeed(json.current.wind_speed);
         updateTemperature(json.current.temperature);
+        updateUVIndex(json.current.uv_index);
 
         updateTimeOfDay(json.current.is_day);
         
@@ -80,6 +84,12 @@ function updateWindSpeed(windSpeedValue) {
 function updateTemperature(temperatureValue) {
     temperatureSlider.value = temperatureValue;
     temperatureNum.innerHTML = temperatureValue + "ºC";
+}
+
+// updates uv index value on slider
+function updateUVIndex(uvIndexValue) {
+    uvSlider.value = uvIndexValue;
+    uvIndex.innerHTML = uvIndexValue;
 }
 
 function updateTimeOfDay(dayTime) {
