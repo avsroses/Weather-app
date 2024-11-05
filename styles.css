@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
+
 body {
     overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 div {
-    margin: 20px;
+    margin: 10px;
+}
+
+h1 {
+    font-family: "Rubik Puddles", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
 }
 
 .container {
@@ -102,8 +112,6 @@ div {
     border-radius: 50%;
     background: #7511bd;
     cursor: pointer;
-    /* fill in */
-    box-shadow: -407px 0 0 25px #f50;
 }
 
 #temp-slider::-moz-range-thumb {
@@ -112,8 +120,6 @@ div {
     border-radius: 50%;
     background: #7511bd;
     cursor: pointer;
-    /*  slider progress trick  */
-    box-shadow: -407px 0 0 25px #f50;
 }
 
 /* set div of temp so no overflow */
@@ -158,4 +164,8 @@ div {
 #background {
     background-color: aliceblue;
     color: black;
+}
+
+#title {
+    padding-top: 50px;
 }

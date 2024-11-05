@@ -59,7 +59,7 @@ async function fetchData() {
 function updateHumidity(humidityValue) {
     humiditySlider.value = humidityValue;
     humidityNum.innerHTML = humidityValue + "%"
-
+    // changes filter opacity to match humidity value
     humidityFilter.style.opacity = humidityValue * 0.5 / 100;
 }
 
