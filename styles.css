@@ -62,9 +62,6 @@ h1 {
     cursor: pointer;
 }
 
-.horizonatl-slider:hover {
-    opacity: 1;
-}
 
 /* Animation for leaf and cloud */
 .leaf {
@@ -150,8 +147,9 @@ h1 {
     background-image: url('assets/UV-index.jpg');
 }
 
-/* makes temperature slider verticle*/
+/* temp slider styling*/
 #temp-slider {
+    /* makes temperature slider verticle */
     transform: rotate(-90deg);
     translate: 0 50px;
     border-radius: 25px;
