@@ -22,6 +22,7 @@ const uvIndex = document.getElementById("uv-index");
 
 // animations
 const leafAnimations = document.getElementsByClassName("leaf");
+const cloudAnimation = document.getElementsByClassName("cloud");
 
 // filter
 const humidityFilter = document.getElementById("humidity-filter");
@@ -52,8 +53,9 @@ async function fetchData() {
         updateUVIndex(json.current.uv_index);
 
         updateTimeOfDay(json.current.is_day);
-        
 
+        updateCloudCoverage(json.current.cloudcover);
+        
     } catch(error) {
         console.error(error);
     }
@@ -78,6 +80,10 @@ function updateWindSpeed(windSpeedValue) {
     for(const leaf of leafAnimations) {
         leaf.style.animationDuration = newDuration + "s";
     }
+
+    for(const cloud of cloudAnimation) {
+        cloud.style.animationDuration = newDuration + "s";
+    }
 }
 
 // updates temperature value on slider
@@ -97,6 +103,20 @@ function updateTimeOfDay(dayTime) {
         dayOrNight.style.backgroundColor = "black";
         dayOrNight.style.color = "white";
     } 
+}
+
+function updateCloudCoverage(cloudCover) {
+    if(cloudCover === 0) {
+        for(const cloud of cloudAnimation) {
+            cloud.style.opacity = 0;
+        }
+    } else if(cloudCover <= 5) {
+        for(const cloud of cloudAnimation) {
+            cloud.style.opacity = 0.5;
+        }
+    } else {
+
+    }
 }
 
 // fetch data every half second
