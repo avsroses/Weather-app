@@ -79,10 +79,10 @@ function updateHumidity(humidityValue) {
 // updates wind speed value on slider
 function updateWindSpeed(windSpeedValue) {
     windSlider.value = windSpeedValue;
-    windSpeed.innerHTML = windSpeedValue + " m/s";
+    windSpeed.innerHTML = windSpeedValue + "km/h";
 
     // calculates duration based on speed
-    const newDuration = (32 - Number(windSpeedValue)) * 11 / 32 + 1;
+    const newDuration = (400 - Number(windSpeedValue)) * 11 / 400 + 1;
 
     for (const leaf of leafAnimations) {
         leaf.style.animationDuration = newDuration + "s";
