@@ -48,7 +48,6 @@ async function fetchData() {
 
         // obtain json
         const json = await response.json();
-        console.log(json);
 
         // passes values into functions pulled from json
         updateHumidity(json.current.humidity);
