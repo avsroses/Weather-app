@@ -1,11 +1,11 @@
-const apiUrl = "http://localhost:5500/assets/data/test.json";
-/*
+// const apiUrl = "http://localhost:5500/assets/data/test.json";
+
 const apiUrl = "http://api.weatherstack.com/current?";
 const urlParams = {
     query: "Norwich",
     access_key: "be9f1bc4d9baecdeeae0e1f5a74ff5ed",
 };
-*/
+
 
 // link sliders and text
 const windSlider = document.getElementById("wind-slider");
@@ -38,8 +38,8 @@ const windDegree = document.getElementById("wind-arrow");
  */
 async function fetchData() {
     try {
-        const response = await fetch(apiUrl);
-        //const response = await fetch(apiUrl + new URLSearchParams(urlParams));
+        // const response = await fetch(apiUrl);
+        const response = await fetch(apiUrl + new URLSearchParams(urlParams));
 
         // check response is ok
         if (!response.ok) {
@@ -140,5 +140,5 @@ async function updateWindDegree(windDegreeValue) {
 }
 
 // fetch data every half second
-setInterval(fetchData, 500)
-//fetchData()
+// setInterval(fetchData, 500)
+fetchData()
