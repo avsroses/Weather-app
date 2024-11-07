@@ -69,7 +69,7 @@ async function fetchData() {
 }
 
 // updates humidity value on slider
-function updateHumidity(humidityValue) {
+async function updateHumidity(humidityValue) {
     humiditySlider.value = humidityValue;
     humidityNum.innerHTML = humidityValue + "%"
     // changes filter opacity to match humidity value
@@ -77,12 +77,12 @@ function updateHumidity(humidityValue) {
 }
 
 // updates wind speed value on slider
-function updateWindSpeed(windSpeedValue) {
+async function updateWindSpeed(windSpeedValue) {
     windSlider.value = windSpeedValue;
     windSpeed.innerHTML = windSpeedValue + "km/h";
 
     // calculates duration based on speed
-    const newDuration = (400 - Number(windSpeedValue)) * 11 / 400 + 1;
+    let newDuration = ((408 - Number(windSpeedValue)) * 11) / 408 + 1;
 
     for (const leaf of leafAnimations) {
         leaf.style.animationDuration = newDuration + "s";
@@ -94,19 +94,19 @@ function updateWindSpeed(windSpeedValue) {
 }
 
 // updates temperature value on slider
-function updateTemperature(temperatureValue) {
+async function updateTemperature(temperatureValue) {
     temperatureSlider.value = temperatureValue;
     temperatureNum.innerHTML = temperatureValue + "ºC";
 }
 
 // updates uv index value on slider
-function updateUVIndex(uvIndexValue) {
+async function updateUVIndex(uvIndexValue) {
     uvSlider.value = uvIndexValue;
     uvIndex.innerHTML = uvIndexValue;
 }
 
 // updates backgorund and font to white/ black based on if its day
-function updateTimeOfDay(dayTime) {
+async function updateTimeOfDay(dayTime) {
     if (dayTime === "no") {
         dayOrNight.style.backgroundColor = "black";
         dayOrNight.style.color = "white";
@@ -114,7 +114,7 @@ function updateTimeOfDay(dayTime) {
 }
 
 // Changes opacity of cloud image based on cloud coverage
-function updateCloudCoverage(cloudCover) {
+async function updateCloudCoverage(cloudCover) {
     if (cloudCover === 0) {
         for (const cloud of cloudAnimation) {
             cloud.style.opacity = 0;
@@ -127,12 +127,12 @@ function updateCloudCoverage(cloudCover) {
     }
 }
 
-function updateWindDirection(windDirectionValue) {
+async function updateWindDirection(windDirectionValue) {
     // Changes text to display direction of wind
     windDirection.innerHTML = windDirectionValue;
 }
 
-function updateWindDegree(windDegreeValue) {
+async function updateWindDegree(windDegreeValue) {
     // Changes rotation of arrow
     windDegree.style.rotate = windDegreeValue + "deg";
     // Changes text below to also include degree value
